@@ -1,19 +1,9 @@
-// import axios from 'axios';
-
-// export default async function getTodayWeatherApiData(lat, lon) {
-//   const response = await axios.get(
-//     `http://localhost:5000/currentdata?lat=${lat}&lon=${lon}`
-//   );
-
-//   return response.data;
-// }
-
 import axios from 'axios';
 
 export default async function getTodayWeatherApiData(lat, lon) {
   try {
     const response = await axios.get(
-      `http://localhost:5000/currentdata?lat=${lat}&lon=${lon}`
+      `https://weather-app-backend-nodejs.onrender.com/currentdata?lat=${lat}&lon=${lon}`
     );
     return response.data;
   } catch (error) {
