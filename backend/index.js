@@ -1,8 +1,8 @@
-import axios from 'axios';
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import { env } from 'node:process';
+import axios from 'axios';
 
 const app = express();
 
@@ -54,5 +54,5 @@ app.get('/geocode', (req, res) => {
 });
 
 app.listen(env.PORT, () => {
-  console.log('Server is running...');
+  console.log('Server is running ' + env.PORT);
 });
