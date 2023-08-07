@@ -6,11 +6,14 @@ import {
   resetPredictedWeatherData,
 } from '../../../app/features/weatherSlice';
 import MainWeatherCard from '../../UI/mainWeatherCard/MainWeatherCard';
+import Loading from '../../UI/loading/Loading';
 
 function CurrentCityTodayWeather() {
   const todayWeatherData = useSelector(
     (state) => state.getWeatherDetails.todayWeatherData
   );
+
+  const loading = useSelector((state) => state.getWeatherDetails.loading);
 
   const dispatch = useDispatch();
 
@@ -34,7 +37,11 @@ function CurrentCityTodayWeather() {
 
   return (
     <>
-      <MainWeatherCard todayWeatherData={todayWeatherData} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <MainWeatherCard todayWeatherData={todayWeatherData} />
+      )}
     </>
   );
 }

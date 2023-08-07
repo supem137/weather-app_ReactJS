@@ -14,21 +14,16 @@ function Home() {
 
   return (
     <>
-      {console.log(selectCityName.lat)}
       <CitySearchBar />
       <SuggestBox />
       {selectCityName ? (
         <>
-          {/* {console.log('hi')}
-          {console.log(selectCityName)} */}
           <SearchCityTodayWeather />
           <SearchCiryPredicted />
           <OtherCondition key={[selectCityName.lat, selectCityName.lat]} />
         </>
       ) : (
         <>
-          {console.log('hi')}
-          {console.log(selectCityName)}
           <CurrentCityTodayWeather />
           <CurrentCityPredictedWeather />
           <OtherCondition key={[selectCityName.lat, selectCityName.lat]} />

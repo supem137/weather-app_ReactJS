@@ -61,14 +61,14 @@ export const weatherSlice = createSlice({
     //todayWeatherData
     builder
       .addCase(fetchTodayWeatherData.pending, (state) => {
-        state.loading = true;
+        // state.loading = true;
       })
       .addCase(fetchTodayWeatherData.fulfilled, (state, action) => {
-        state.loading = false;
+        // state.loading = false;
         state.todayWeatherData = action.payload;
       })
       .addCase(fetchTodayWeatherData.rejected, (state) => {
-        state.loading = true;
+        // state.loading = true;
         state.error = true;
       });
     //predictedWeatherData
@@ -87,14 +87,14 @@ export const weatherSlice = createSlice({
     //get cities name and lat and log
     builder
       .addCase(fetchGeoCodeAndCityNames.pending, (state) => {
-        state.loading = true;
+        // state.loading = true;
       })
       .addCase(fetchGeoCodeAndCityNames.fulfilled, (state, action) => {
-        state.loading = false;
+        // state.loading = false;
         state.cityApiData = action.payload;
       })
       .addCase(fetchGeoCodeAndCityNames.rejected, (state) => {
-        state.loading = true;
+        // state.loading = true;
         state.error = true;
       });
   },
