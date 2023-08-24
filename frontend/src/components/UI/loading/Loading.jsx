@@ -9,7 +9,7 @@ function Loading() {
       <div className="fullscreen-msg">
         <p className="loading-msg">
           This is an education purpose-only site hosted using free services.
-          Please wait until it loads :)
+          Please wait until it loads :). and please allow location permission.
         </p>
       </div>
     </>
