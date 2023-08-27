@@ -4,7 +4,7 @@ function Loading() {
   return (
     <>
       <div className="fullscreen-loading">
-        <p className="loading">laoding...</p>
+        <p className="loading">loading...</p>
       </div>
       <div className="fullscreen-msg">
         <p className="loading-msg">
