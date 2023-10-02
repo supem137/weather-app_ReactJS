@@ -1,6 +1,5 @@
 # Weather Application
-
-![Weather Application Screenshot](/path/to/screenshot.png)
+![Screenshot from 2023-10-02 20-35-18](https://github.com/supem137/weather-app_ReactJS/assets/80448223/ab0b787a-2cf9-4230-8b08-cb17f03e8f29)
 
 A weather application built with React, Redux, and Tailwind CSS that provides users with up-to-date weather information from the OpenWeather API and geolocation data from the GeoDB Cities API. Users can conveniently view weather forecasts for different locations and stay informed about essential weather metrics.
 
