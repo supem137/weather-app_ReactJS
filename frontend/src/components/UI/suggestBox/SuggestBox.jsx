@@ -30,7 +30,6 @@ function SuggestBox() {
   }, [searchCityName, dispatch]);
 
   const selectNameHandler = (event, index) => {
-    console.log(cityApiData[index]);
     setListVisible(false);
     dispatch(
       setSelectCityName({
@@ -41,20 +40,20 @@ function SuggestBox() {
   };
 
   return (
-    <div className="absolute -translate-x-2/4 left-2/4">
-      {isListVisible &&
-        cityApiData &&
-        cityApiData.map((ele, index) => {
-          return (
+    <div className="absolute z-10 w-full max-w-md transform -translate-x-1/2 bg-white border border-gray-200 rounded-lg shadow-lg left-1/2">
+      {isListVisible && cityApiData && (
+        <div className="overflow-y-auto max-h-60">
+          {cityApiData.map((ele, index) => (
             <p
-              className="pl-2 bg-slate-100 w-screen/2"
+              className="px-4 py-2 transition duration-300 ease-in-out border-b border-gray-200 cursor-pointer hover:bg-gray-100"
               key={index}
               onClick={(event) => selectNameHandler(event, index)}
             >
               {ele.name}, {ele.country}
             </p>
-          );
-        })}
+          ))}
+        </div>
+      )}
     </div>
   );
 }
