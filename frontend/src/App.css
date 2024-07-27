@@ -7,3 +7,24 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0f2fe; /* Light blue background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #38bdf8; /* Primary blue color */
+  border-radius: 5px; /* Rounded corners for a smoother look */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7; /* Darker blue on hover */
+  border: 2px solid #e0f2fe; /* Adding a light border on hover */
+}

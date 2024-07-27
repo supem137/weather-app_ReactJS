@@ -13,17 +13,21 @@ function SuggestBox() {
     (state) => state.getWeatherDetails.cityApiData
   );
 
-  const [isListVisible, setListVisible] = useState(true);
+  const [isListVisible, setListVisible] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        dispatch(fetchGeoCodeAndCityNames(searchCityName));
-        setListVisible(true);
-      } catch (error) {
-        console.error('Error fetching city data:', error);
+      if (searchCityName.trim() !== '') {
+        try {
+          dispatch(fetchGeoCodeAndCityNames(searchCityName));
+          setListVisible(true);
+        } catch (error) {
+          console.error('Error fetching city data:', error);
+        }
+      } else {
+        setListVisible(false);
       }
     };
     fetchData();
@@ -40,18 +44,20 @@ function SuggestBox() {
   };
 
   return (
-    <div className="absolute z-10 w-full max-w-md transform -translate-x-1/2 bg-white border border-gray-200 rounded-lg shadow-lg left-1/2">
+    <div className="relative">
       {isListVisible && cityApiData && (
-        <div className="overflow-y-auto max-h-60">
-          {cityApiData.map((ele, index) => (
-            <p
-              className="px-4 py-2 transition duration-300 ease-in-out border-b border-gray-200 cursor-pointer hover:bg-gray-100"
-              key={index}
-              onClick={(event) => selectNameHandler(event, index)}
-            >
-              {ele.name}, {ele.country}
-            </p>
-          ))}
+        <div className="absolute z-10 w-full max-w-md transform -translate-x-1/2 bg-white border border-gray-200 rounded-lg shadow-lg left-1/2">
+          <div className="overflow-y-auto max-h-60">
+            {cityApiData.map((ele, index) => (
+              <p
+                className="px-4 py-2 transition duration-300 ease-in-out border-b border-gray-200 cursor-pointer hover:bg-gray-100"
+                key={index}
+                onClick={(event) => selectNameHandler(event, index)}
+              >
+                {ele.name}, {ele.country}
+              </p>
+            ))}
+          </div>
         </div>
       )}
     </div>
