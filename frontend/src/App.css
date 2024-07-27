@@ -7,24 +7,38 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-/* width */
+
+/* Scrollbar customization */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #e0f2fe; /* Light blue background */
+  background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #38bdf8; /* Primary blue color */
-  border-radius: 5px; /* Rounded corners for a smoother look */
+  background: #6fa6ff;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7; /* Darker blue on hover */
-  border: 2px solid #e0f2fe; /* Adding a light border on hover */
+  background: #4788ff;
+}
+
+/* Background animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
 }
