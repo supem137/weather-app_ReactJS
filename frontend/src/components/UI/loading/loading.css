@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,26 +15,60 @@
 }
 
 /* Style for the loading indicator */
-.fullscreen-loading .loading {
-  /* Customize the loading text styles */
+.loading {
   color: white;
-  font-size: 24px;
+  font-size: 32px;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+/* Animation for loading dots */
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot {
+  animation: blink 1s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 .fullscreen-msg {
   position: fixed;
-  top: 30px;
+  bottom: 30px;
   left: 0;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
+.message-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  text-align: center;
+}
+
 .loading-msg {
-  /* Customize the loading text styles */
-  color: white;
-  font-size: 24px;
+  color: black;
+  font-size: 20px;
+  font-family: 'Arial', sans-serif;
 }
